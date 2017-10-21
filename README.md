@@ -14,6 +14,6 @@ Taking no credit here.
 * cobbled together various stack-o's attributed in the main Elevator.cpp
   * notably the approach of building as a Windows GUI exe to avoid showing undesirable default console windows, yet attaching to an existing cmd.exe console if one is present.
 
-Solution is compiling with Visual Studio 2017 v15.4.0 with Desktop C++ workload installed.
+Solution is compiling on Visual Studio 2017 v15.4.0 with Desktop C++ workload installed.
 
 I should mention, I am not at all a C++ programmer.  This code is likely to be riddled with copy-paste bugs.
