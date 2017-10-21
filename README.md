@@ -3,8 +3,8 @@ Windows process launcher, supporting elevate up or down from current process ele
 
 ## Motivation
 Initially looking to **seamlessly** launch DevEnv.exe to edit files from command line, no matter whether DevEnv or cmd is currently elevated.  Notably, DevEnv is conveniently single instance by default. There are 4 possible combinations of "from" & "to":
-* low-low & high-high: when they're the same it's trivial to launch
-* low to high: requires either login credentials or a UAC prompt. In my edit.cmd script I've chosen to pass credentials (from environment variables)
+* low-low & high-high: when they're the same it's trivial to launch, no prompting
+* low to high: launches via ShellExecuteEx.verb = "runas" (fires unavoidable UAC prompt)
 * high to low: see [Raymond Chen's](https://blogs.msdn.microsoft.com/oldnewthing/20131118-00/?p=2643) post for the problem-solution explanation.
 
 ## Attribution
