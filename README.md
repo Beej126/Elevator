@@ -28,3 +28,19 @@ Windows Registry Editor Version 5.00
 [HKEY_CLASSES_ROOT\*\shell\Open with DevEnv\command]
 @="c:\\bin\\Elevator.exe -elev devenv.exe \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Common7\\IDE\\devenv.exe\" /edit \\\"%1\\\""
 ```
+
+## edit.cmd (put in your path)
+```
+@echo off
+SETLOCAL
+
+set editor="C:\Program Files (x86)\Microsoft Visual Studio\2017\Enterprise\Common7\IDE\devenv.exe" /edit
+
+if exist %1 goto :skipCreate
+set doNew=y
+set /p doNew=Create new file? [y] 
+if "%doNew%"=="y" (echo.>%1) else goto :EOF
+:skipCreate
+
+Elevator -dir "%cd%" -elev devenv.exe %editor% \"%1\"
+```
