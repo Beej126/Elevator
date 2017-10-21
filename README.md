@@ -16,4 +16,4 @@ Taking no credit here.
 
 Solution is compiling on Visual Studio 2017 v15.4.0 with Desktop C++ workload installed.
 
-I should mention, I am not at all a C++ programmer.  This code is likely to be riddled with copy-paste bugs.
+I should mention, I am not at all a C++ programmer.  This code is likely to be riddled with copy-paste bugs and inefficiencies.
