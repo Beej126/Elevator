@@ -17,3 +17,14 @@ Taking no credit here.
 Solution is compiling on Visual Studio 2017 v15.4.0 with Desktop C++ workload installed.
 
 I should mention, I am not at all a C++ programmer.  This code is likely to be riddled with copy-paste bugs and inefficiencies.
+
+## Open with DevEnv.reg
+```
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\*\shell\Open with DevEnv]
+"icon"="C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Common7\\IDE\\devenv.exe"
+
+[HKEY_CLASSES_ROOT\*\shell\Open with DevEnv\command]
+@="c:\\bin\\Elevator.exe -elev devenv.exe \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Common7\\IDE\\devenv.exe\" /edit \\\"%1\\\""
+```
