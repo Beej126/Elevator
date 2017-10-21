@@ -26,5 +26,5 @@ Windows Registry Editor Version 5.00
 "icon"="C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Common7\\IDE\\devenv.exe"
 
 [HKEY_CLASSES_ROOT\*\shell\Open with DevEnv\command]
-@="c:\\bin\\Elevator.exe -v -elev devenv.exe \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Common7\\IDE\\devenv.exe\" /edit \\\"%1\\\""
+@="c:\\bin\\Elevator.exe -elev devenv.exe \"C:\\Program Files (x86)\\Microsoft Visual Studio\\2017\\Enterprise\\Common7\\IDE\\devenv.exe\" /edit \\\"%1\\\""
 ```
