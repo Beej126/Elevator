@@ -1,11 +1,26 @@
 # Elevator
-Windows process launcher, supporting elevate up or down from current process elevation, show/hide and wait.
+Windows process launcher supporting elevate up or down, hide, wait and it's **NOT a Console app** (built as Windows GUI exe) which  avoids creating unsightly default console window - yet will create console to show usage and debug output where requested
+
+## Usage
+```
+Elevator [options] prog [args]
+-?    - Shows this help
+-v    - debug mode
+-wait - Waits until prog terminates
+-hide - Launches with hidden window
+-elev - specify elevation change (from host process):
+          name.exe - elevate same as existing name.exe
+          low      - force low (going high to low precludes -wait option).
+          high     - force high
+-dir  - working directory
+-c    - Launches via %COMSPEC% /s /c prog "args"
+        (/s removes the outer quotes and persists everything else; see 'help cmd.exe')
+prog  - The program to execute
+args  - Optional command line arguments to prog
+```
 
 ## Motivation
 Initially looking to **seamlessly** launch DevEnv.exe to edit files from command line, no matter whether DevEnv or cmd is currently elevated.  Notably, DevEnv is conveniently single instance by default. There are 4 possible combinations of "from" & "to":
-* low-low & high-high: when they're the same it's trivial to launch, no prompting
-* low to high: launches via ShellExecuteEx.verb = "runas" (fires unavoidable UAC prompt)
-* high to low: see [Raymond Chen's](https://blogs.msdn.microsoft.com/oldnewthing/20131118-00/?p=2643) post for the problem-solution explanation.
 
 ## Attribution
 Taking no credit here.
