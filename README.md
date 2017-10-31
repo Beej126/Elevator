@@ -59,3 +59,11 @@ if "%doNew%"=="y" (echo.>%1) else goto :EOF
 
 Elevator -dir "%cd%" -elev devenv.exe %editor% \"%1\"
 ```
+
+## another handy usage
+associate .bat files with **hidden** launch
+(use .cmd for normal operation)
+```
+assoc .bat=ElevatorHiddenBatch
+ftype ElevatorHiddenBatch=c:\bin\elevator.exe -hide -c \"%1\"
+```
