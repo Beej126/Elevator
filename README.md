@@ -57,7 +57,7 @@ set /p doNew=Create new file? [y]
 if "%doNew%"=="y" (echo.>%1) else goto :EOF
 :skipCreate
 
-Elevator -dir "%cd%" -elev devenv.exe %editor% \"%1\"
+Elevator -dir "%cd%" -elev %editor% \"%1\"
 ```
 
 ## another handy usage
