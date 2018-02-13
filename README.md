@@ -20,15 +20,15 @@ args  - Optional command line arguments to prog
 ```
 
 ## Motivation
-Initially looking to **seamlessly** launch DevEnv.exe to edit files from command line, no matter whether DevEnv or cmd is currently elevated.  Notably, DevEnv is conveniently single instance by default. There are basically 4 possible combinations of elevation going from the current cmd.exe process to the possibly running DevEnv.exe process:
+Looking to launch DevEnv.exe to edit files from command line, ***with minimal UAC prompting***, no matter whether DevEnv or cmd is currently elevated.  Notably, DevEnv is conveniently single instance by default. There are basically 4 possible combinations of elevation going from the current cmd.exe process to the possibly running DevEnv.exe process:
 
 cmd | DevEnv | transition required
 --- | --- | ---
-low | high | this is kinda the main typical route 
-high | low | this required the shifting down trick, i.e. lauching by proxy thru another low process (e.g. explorer.exe)
-low | low | really nothing to be done here
-high | high | nor here
-low or high | not running | launch with cmd.exe's current elevation
+low | high | this is kinda the main typical route; no way to avoid UAC prompt
+high | low | this required the shifting down trick, i.e. lauching by proxy thru another low process (e.g. explorer.exe) **no UAC prompt required**
+low | low | really nothing special to be done here, just launch with cmd.exe's current elevation
+high | high | ditto
+either | not running | ditto
 
 ## Attribution
 Taking no credit here.
