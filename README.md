@@ -19,6 +19,9 @@ prog  - The program to execute
 args  - Optional command line arguments to prog
 ```
 
+## Requires Visual C++ Runtime installed
+[https://aka.ms/vs/17/release/vc_redist.x64.exe](https://aka.ms/vs/17/release/vc_redist.x64.exe)
+
 ## Motivation
 Looking to launch DevEnv.exe to edit files from command line, ***with minimal UAC prompting***, no matter whether DevEnv or cmd is currently elevated.  Notably, DevEnv is conveniently single instance by default. There are basically 4 possible combinations of elevation going from the current cmd.exe process to the possibly running DevEnv.exe process:
 
